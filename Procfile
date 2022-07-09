@@ -1,0 +1,1 @@
+web: gunicorn sword_core.wsgi --log-file -
