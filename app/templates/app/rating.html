@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+<div class="container mt-3">
+    <div class="row">
+        <table id="lista_club" class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Categoria</th>
+                    <th>Peleador</th>
+                    <th>Club</th>
+                    <th>Rating</th>
+                    <th>RD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in lista_rating %}
+                <tr>
+                    <td>{{item.rank}}</td>
+                    <td>{{item.categoria}}</td>
+                    <td>{{item.peleador.nombre}}</td>
+                    <td>{{item.club}}</td>
+                    <td>{{item.rating}}</td>
+                    <td>{{item.rd}}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Rank</th>
+                    <th>Categoria</th>
+                    <th>Peleador</th>
+                    <th>Club</th>
+                    <th>Rating</th>
+                    <th>RD</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+ <script>
+    $(document).ready(function () {
+    $('#lista_club').DataTable();
+});
+ </script>
+{% endblock %}
