@@ -1,5 +1,7 @@
 from .base import *
 
+ignore_warnings(message="No directory at", module="whitenoise.base").enable()
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
