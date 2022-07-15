@@ -4,11 +4,11 @@
 
 <div class="container mt-3">
     <div class="row">
+        <h2>{{lista_rating.0.categoria}}</h2>
         <table id="lista_club" class="table table-striped" style="width:100%">
             <thead class="table-dark">
                 <tr>
                     <th>Rank</th>
-                    <th>Categoria</th>
                     <th>Peleador</th>
                     <th>Club</th>
                     <th>Rating</th>
@@ -19,7 +19,6 @@
                 {% for item in lista_rating %}
                 <tr>
                     <td>{{item.rank}}</td>
-                    <td>{{item.categoria}}</td>
                     <td>{{item.peleador.nombre}}</td>
                     <td>{{item.peleador.club}}
                     </td>
