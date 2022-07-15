@@ -17,7 +17,7 @@
                 {% for item in lista_peleadores %}
                 <tr>
                     <td>{{item.nombre}}</td>
-                    <td>{{detalle.get_sexo_display}}</td>
+                    <td>{{item.get_sexo_display}}</td>
                     <td>{{item.club}}</td>
                     <td><a class="btn btn-primary" href="{% url 'app:detalle_peleador' item.id %}">Ficha</a></td>
                 </tr>
