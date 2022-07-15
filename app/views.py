@@ -44,7 +44,7 @@ class DetallePelador(DetailView):
 
 
 class DetalleClub(DetailView):
-    template_name = 'app/ficha_peleador.html'
+    template_name = 'app/ficha_club.html'
     model = Clubes
     context_object_name = "detalle"
 
