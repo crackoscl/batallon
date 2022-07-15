@@ -7,8 +7,8 @@
 
             <ul class="list-group">
                 <li class="list-group-item"><strong>Nombre: </strong>{{detalle.nombre}}</li>
-                <li class="list-group-item"><strong>Club: </strong>{{detalle.region}}</li>
-                <li class="list-group-item"><strong>Sexo: </strong>{{detalle.comuna}}</li>
+                <li class="list-group-item"><strong>Region: </strong>{{detalle.region}}</li>
+                <li class="list-group-item"><strong>Comuna: </strong>{{detalle.comuna}}</li>
               </ul>
 
             <h1></h1>
@@ -29,7 +29,7 @@
                     <tr>
                         
                         <td>{{item.nombre}}</td>
-                        <td>{{item.sexo}}</td>
+                        <td>{{item.get_sexo_display}}</td>
                         
                         
                     </tr>
@@ -50,3 +50,5 @@
      
     </div>
 </div>
+
+{% endblock contenido %}
