@@ -50,7 +50,7 @@ class DetalleClub(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DetalleClub, self).get_context_data(**kwargs) # default
-        context['peleadores'] = Clubes.objects.filter(peleador_id=self.object)
+        context['peleadores'] = Peleador.objects.filter(club_id=self.object)
         print(context)
         return context
 
