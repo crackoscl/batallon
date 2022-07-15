@@ -1,10 +1,10 @@
 
 from django.shortcuts import render, HttpResponse
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 from django.contrib.auth.decorators import user_passes_test,login_required
 import json
-from .models import Clubes, Peleador, Categorias, Rating, Comuna, Region
+from .models import Clubes, Peleador, Categorias, Rating, Comuna
 
 # Create your views here.
 class ListClubes(ListView):
@@ -29,11 +29,25 @@ class ListPeleadores(ListView):
         return context
 
 
-class Rating_list(View):
+class RatingList(View):
     def get(self,request,pk):
         categorias = Categorias.objects.all()
         rating = Rating.objects.filter(categoria=pk)
         return render(request,'app/rating.html',{'lista_rating':rating,'categorias': categorias})
+
+
+class DetallePelador(DetailView):
+    template_name = 'app/ficha_peleador.html'
+    model = Peleador
+    context_object_name = "detalle"
+
+    def get_context_data(self, **kwargs):
+        context = super(DetallePelador, self).get_context_data(**kwargs) # default
+        context['ranking'] = Rating.objects.filter(peleador_id=self.object)
+        return context
+
+
+
         
     
 @user_passes_test(lambda u: u.is_superuser)

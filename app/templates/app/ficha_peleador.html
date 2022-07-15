@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Nombre: </strong>{{detalle.nombre}}</li>
+                <li class="list-group-item"><strong>Club: </strong>{{detalle.club}}</li>
+                <li class="list-group-item"><strong>Sexo: </strong>{{detalle.get_sexo_display}}</li>
+              </ul>
+
+            <h1></h1>
+            <h1></h1>
+            <h1></h1>
+           
+        </div>
+        <div class="col-md-8">
+            <table id="lista_club" class="table table-striped" style="width:100%">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Categoria</th>
+                        <th>Peleador</th>
+                        <th>Club</th>
+                        <th>Rating</th>
+                        <th>RD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in ranking%}
+                    <tr>
+                        <td>{{item.rank}}</td>
+                        <td>{{item.categoria}}</td>
+                        <td>{{item.peleador.nombre}}</td>
+                        <td>{{item.peleador.club}}
+                        </td>
+                        <td>{{item.rating}}</td>
+                        <td>{{item.rd}}</td>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <!-- <tfoot>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Categoria</th>
+                        <th>Peleador</th>
+                        <th>Club</th>
+                        <th>Rating</th>
+                        <th>RD</th>
+                    </tr>
+                </tfoot> -->
+            </table>
+        </div>
+     
+    </div>
+</div>
+
+      
+{% endblock contenido %}
+
+
+
+
+
+
+
+
