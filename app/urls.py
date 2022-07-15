@@ -9,6 +9,6 @@ urlpatterns = [
     path('peleadores/',ListPeleadores.as_view(),name='peleadores'),
     path('rating/<int:pk>/',RatingList.as_view(),name='rating'),
     path('get_comuna/',get_comuna,name='comuna'),
-    path('detalle/<int:pk>', DetallePelador.as_view(),name='detalle_peleador'),
-    path('detalle/<int:pk>', DetalleClub.as_view(),name='detalle_club')
+    path('peleador/detalle/<int:pk>', DetallePelador.as_view(),name='detalle_peleador'),
+    path('club/detalle/<int:pk>', DetalleClub.as_view(),name='detalle_club')
 ]
