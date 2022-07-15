@@ -20,8 +20,9 @@
             <table id="lista_club" class="table table-striped" style="width:100%">
                 <thead class="table-dark">
                     <tr>
-                        <th>Rank</th>
+                        
                         <th>Categoria</th>
+                        <th>Rank</th>
                         <th>Rating</th>
                         <th>RD</th>
                     </tr>
@@ -29,8 +30,9 @@
                 <tbody>
                     {% for item in ranking%}
                     <tr>
-                        <td>{{item.rank}}</td>
+                        
                         <td>{{item.categoria}}</td>
+                        <td>{{item.rank}}</td>
                         <td>{{item.rating}}</td>
                         <td>{{item.rd}}</td>
                         
