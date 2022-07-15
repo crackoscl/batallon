@@ -7,15 +7,18 @@ import json
 from .models import Clubes, Peleador, Categorias, Rating, Comuna
 
 # Create your views here.
+
+
+
 class ListClubes(ListView):
     model = Clubes
     template_name = 'app/index.html'
     context_object_name = 'lista_clubes'
 
-    def get_context_data(self, **kwargs):
-        context = super(ListClubes, self).get_context_data(**kwargs) # default
-        context['categorias'] = Categorias.objects.all()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(ListClubes, self).get_context_data(**kwargs) # default
+    #     context['categorias'] = Categorias.objects.all()
+    #     return context
 
 
 class ListPeleadores(ListView):
@@ -23,10 +26,10 @@ class ListPeleadores(ListView):
     template_name = 'app/peleadores.html'
     context_object_name = 'lista_peleadores'
 
-    def get_context_data(self, **kwargs):
-        context = super(ListPeleadores, self).get_context_data(**kwargs) # default
-        context['categorias'] = Categorias.objects.all()
-        return context
+    # def get_context_data(self, **kwargs):
+    #     context = super(ListPeleadores, self).get_context_data(**kwargs) # default
+    #     context['categorias'] = Categorias.objects.all()
+    #     return context
 
 
 class RatingList(View):
