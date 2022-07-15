@@ -15,21 +15,14 @@ class ListClubes(ListView):
     template_name = 'app/index.html'
     context_object_name = 'lista_clubes'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(ListClubes, self).get_context_data(**kwargs) # default
-    #     context['categorias'] = Categorias.objects.all()
-    #     return context
-
+  
 
 class ListPeleadores(ListView):
     model = Peleador
     template_name = 'app/peleadores.html'
     context_object_name = 'lista_peleadores'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super(ListPeleadores, self).get_context_data(**kwargs) # default
-    #     context['categorias'] = Categorias.objects.all()
-    #     return context
+
 
 
 class RatingList(View):
@@ -47,6 +40,18 @@ class DetallePelador(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DetallePelador, self).get_context_data(**kwargs) # default
         context['ranking'] = Rating.objects.filter(peleador_id=self.object)
+        return context
+
+
+class DetalleClub(DetailView):
+    template_name = 'app/ficha_peleador.html'
+    model = Clubes
+    context_object_name = "detalle"
+
+    def get_context_data(self, **kwargs):
+        context = super(DetalleClub, self).get_context_data(**kwargs) # default
+        context['peleadores'] = Clubes.objects.filter(peleador_id=self.object)
+        print(context)
         return context
 
 
