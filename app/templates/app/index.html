@@ -21,7 +21,7 @@
                 {% for item in lista_clubes %}
                 <tr>
                     <td>{{item.nombre}}</td>
-                    <td><img src="{{item.logo}}" class="rounded" alt="{{item.nombre}}"></td>
+                    <td><img src="{{item.logo}}" class="rounded" alt="{{item.nombre}}-logo"></td>
                     <td>{{item.region}}</td>
                     <td>{{item.comuna}}</td>
                     <td><a class="btn btn-primary" href="{% url 'app:detalle_club' item.id %}">Ficha</a></td>

@@ -41,6 +41,7 @@ class Clubes(models.Model):
     comuna = models.ForeignKey(
         Comuna, on_delete=models.CASCADE, related_name='relacion')
     logo = models.URLField(max_length=400, default='logo')
+    imagen_perfil = models.URLField(max_length=400 ,default='aqui imagen perfil')
     description = RichTextField(default='aqui texto')
 
     class Meta:
