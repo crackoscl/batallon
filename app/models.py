@@ -1,7 +1,8 @@
 
+from email.policy import default
 from django.db import models
-
 from django.contrib.auth.models import AbstractUser
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -39,6 +40,8 @@ class Clubes(models.Model):
         Region, on_delete=models.CASCADE, related_name='relacion')
     comuna = models.ForeignKey(
         Comuna, on_delete=models.CASCADE, related_name='relacion')
+    logo = models.URLField(max_length=400, default='logo')
+    description = RichTextField(default='aqui texto')
 
     class Meta:
         verbose_name = "Club"

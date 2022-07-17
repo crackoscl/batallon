@@ -4,11 +4,13 @@
 {% block contenido %}
 
 <div class="container mt-3">
+    
     <div class="row">
         <table id="lista_club" class="table table-striped" style="width:100%">
             <thead class="table-dark">
                 <tr>
                     <th>Nombre</th>
+                    <th>Logo</th>
                     <th>Region</th>
                     <th>Comuna</th>
                     <th></th>
@@ -19,6 +21,7 @@
                 {% for item in lista_clubes %}
                 <tr>
                     <td>{{item.nombre}}</td>
+                    <td><img src="{{item.logo}}" class="rounded" alt="{{item.nombre}}"></td>
                     <td>{{item.region}}</td>
                     <td>{{item.comuna}}</td>
                     <td><a class="btn btn-primary" href="{% url 'app:detalle_club' item.id %}">Ficha</a></td>
@@ -35,7 +38,6 @@
         </table>
     </div>
 </div>
-
 
 
 {% endblock %}
