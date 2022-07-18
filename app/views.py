@@ -1,13 +1,20 @@
 
+from pyexpat import model
 from django.shortcuts import render, HttpResponse
 from django.views import View
 from django.views.generic import ListView,DetailView
 from django.contrib.auth.decorators import user_passes_test,login_required
 import json
-from .models import Clubes, Peleador, Categorias, Rating, Comuna
+from .models import Clubes, Peleador, Categorias, Rating, Comuna,Eventos
 
 # Create your views here.
 
+
+class Eventos(ListView):
+    model = Eventos
+    template_name = 'app/eventos.html'
+    context_object_name = 'lista_eventos'
+    
 
 
 class ListClubes(ListView):

@@ -1,10 +1,22 @@
-
-from email.policy import default
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
 
 # Create your models here.
+
+
+class Eventos(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = RichTextField(default='aqui texto')
+    fecha = models.DateField()
+    link_evento = models.CharField(max_length=400)
+
+    def __str__(self):
+        return self.titulo
+
+    class Meta:
+        verbose_name = "Evento"
+        verbose_name_plural = "Eventos"
 
 
 class Region(models.Model):
