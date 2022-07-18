@@ -160,7 +160,7 @@ body{
                                 </div>
                                 <a href="{{evento.link_evento}}" class="forum-item-title">{{evento.titulo}}:  {{evento.fecha}}</a>
                                 <div class="forum-sub-title">
-                                    {{evento.descripcion}}
+                                    {{evento.descripcion | safe }}
                                 </div>
                             </div>
                             
