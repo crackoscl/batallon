@@ -1,5 +1,3 @@
-
-from pyexpat import model
 from django.shortcuts import render, HttpResponse
 from django.views import View
 from django.views.generic import ListView,DetailView
