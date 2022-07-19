@@ -62,8 +62,6 @@ class DetalleClub(DetailView):
         return context
 
 
-
-        
     
 @user_passes_test(lambda u: u.is_superuser)
 @login_required

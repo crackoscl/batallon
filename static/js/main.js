@@ -11,13 +11,10 @@ document.addEventListener(
             }).toString()
         )
           .then((res) => res.json())
-          .then(function (data) {
-            var options = '<option value="">---------</option>';
-            data.map((item) => {
-              options +=
-                '<option value="' + item.id + '">' + item.nombre + "</option>";
+          .then(function (data) {    
+            document.getElementById("id_comuna").innerHTML = data.map((item) => {
+              return `<option value=${item.id}>${item.nombre}</option>`
             });
-            document.getElementById("id_comuna").innerHTML = options;
           });
       });
   },

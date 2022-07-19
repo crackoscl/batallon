@@ -28,11 +28,12 @@ class Region(models.Model):
     class Meta:
         verbose_name = "Region"
         verbose_name_plural = "Regiones"
+        ordering = ['-nombre']
 
 
 class Comuna(models.Model):
     region = models.ForeignKey(
-        Region, on_delete=models.CASCADE, related_name='comuna')
+        Region, on_delete=models.CASCADE,related_name='comunas')
     nombre = models.CharField(max_length=50)
 
     def __str__(self):
@@ -41,6 +42,7 @@ class Comuna(models.Model):
     class Meta:
         verbose_name = "Comuna"
         verbose_name_plural = "Comunas"
+        ordering = ['-nombre']
 
     def __str__(self):
         return self.nombre
@@ -49,9 +51,9 @@ class Comuna(models.Model):
 class Clubes(models.Model):
     nombre = models.CharField(max_length=50)
     region = models.ForeignKey(
-        Region, on_delete=models.CASCADE, related_name='relacion')
+        Region, on_delete=models.CASCADE)
     comuna = models.ForeignKey(
-        Comuna, on_delete=models.CASCADE, related_name='relacion')
+        Comuna, on_delete=models.CASCADE)
     logo = models.URLField(max_length=400, default='logo')
     imagen_perfil = models.URLField(max_length=400 ,default='aqui imagen perfil')
     description = RichTextField(default='aqui texto')
