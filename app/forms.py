@@ -21,5 +21,3 @@ class ClubForm(forms.ModelForm):
                 pass  # Entrada no valida del cliente, ignora y regresa al conjunto de consulta vacia
         elif self.instance.pk:
             self.fields['comuna'].queryset = self.instance.region.comunas.order_by('nombre')
-
-

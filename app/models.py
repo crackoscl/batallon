@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
 
-# Create your models here.
-
 
 class Eventos(models.Model):
     titulo = models.CharField(max_length=100)

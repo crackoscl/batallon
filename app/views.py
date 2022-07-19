@@ -73,7 +73,5 @@ def get_comuna(request):
 
 
 
-
-
     
 
