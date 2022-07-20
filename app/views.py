@@ -32,9 +32,8 @@ class ListPeleadores(ListView):
 
 class RatingList(View):
     def get(self,request,pk):
-        categorias = Categorias.objects.all()
         rating = Rating.objects.filter(categoria=pk)
-        return render(request,'app/rating.html',{'lista_rating':rating,'categorias': categorias})
+        return render(request,'app/rating.html',{'lista_rating':rating})
 
 
 class DetallePelador(DetailView):
@@ -56,7 +55,6 @@ class DetalleClub(DetailView):
     def get_context_data(self, **kwargs):
         context = super(DetalleClub, self).get_context_data(**kwargs) # default
         context['peleadores'] = Peleador.objects.filter(club_id=self.object)
-        print(context)
         return context
 
 
