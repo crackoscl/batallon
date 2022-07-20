@@ -18,7 +18,7 @@
                 <tr>
                     <td>{{item.nombre}}</td>
                     <td>{{item.get_sexo_display}}</td>
-                    <td><a href="{% url 'app:detalle_club' item.id %}">{{item.club}}</a></td>
+                    <td><a href="{% url 'app:detalle_club' item.club.id %}">{{item.club}}</a></td>
                     <td><a class="btn btn-primary" href="{% url 'app:detalle_peleador' item.id %}">Ficha</a></td>
                 </tr>
                 {% endfor %}
