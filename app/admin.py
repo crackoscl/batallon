@@ -1,17 +1,22 @@
 from django.contrib import admin
-from django.utils.html import format_html
-from django.urls import reverse_lazy
+from import_export.admin import ImportExportModelAdmin
 from .models import Clubes, Peleador, Categorias , Rating,Region, Comuna,Eventos
 from .forms import ClubForm
+
 
 
 class ClubesAdmin(admin.ModelAdmin):
     form = ClubForm
 
+
+class RatingAdmin(ImportExportModelAdmin):
+    pass
+
+
     
 
 admin.site.register(Peleador)
-admin.site.register(Rating)
+admin.site.register(Rating,RatingAdmin)
 admin.site.register(Region)
 admin.site.register(Comuna)
 admin.site.register(Categorias)
