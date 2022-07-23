@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import environ
+from django.test.utils import ignore_warnings
 
 env = environ.Env()
 environ.Env.read_env()
