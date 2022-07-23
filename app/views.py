@@ -3,7 +3,7 @@ from django.views import View
 from django.views.generic import ListView,DetailView
 from django.contrib.auth.decorators import user_passes_test,login_required
 import json
-from .models import Clubes, Peleador, Categorias, Rating, Comuna,Eventos
+from .models import Clubes, Peleador,Rating, Comuna,Eventos
 
 # Create your views here.
 

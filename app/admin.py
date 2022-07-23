@@ -12,6 +12,9 @@ class ClubesAdmin(admin.ModelAdmin):
 
 class RatingAdmin(ImportExportModelAdmin):
     resource_class = RatingResource
+    list_display = ('peleador', 'categoria', 'rank','rating','rd')
+    list_filter = ('rank','rating','rd')
+    #search_fields = ['rank']
 
 
     

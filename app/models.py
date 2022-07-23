@@ -92,7 +92,7 @@ class Peleador(models.Model):
         verbose_name_plural = "Peleadores"
 
     def __str__(self) -> str:
-        return f'nombre: {self.nombre}, club: {self.club}'
+        return self.nombre
 
 
 class Rating(models.Model):
