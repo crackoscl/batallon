@@ -1,5 +1,6 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
+from .resources import RatingResource
 from .models import Clubes, Peleador, Categorias , Rating,Region, Comuna,Eventos
 from .forms import ClubForm
 
@@ -10,7 +11,7 @@ class ClubesAdmin(admin.ModelAdmin):
 
 
 class RatingAdmin(ImportExportModelAdmin):
-    pass
+    resource_class = RatingResource
 
 
     
