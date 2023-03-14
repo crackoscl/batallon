@@ -63,7 +63,6 @@ class DetalleClub(DetailView):
 @login_required
 def get_comuna(request):
     id = request.GET.get('id','')
-    print('aqui',request.GET)
     result = list(Comuna.objects.filter(region_id=int(id)).values('id','nombre'))
     return HttpResponse(json.dumps(result), content_type="application/json")
 

@@ -1,34 +1,30 @@
-{% extends 'base.html' %}
-
-{% block contenido %}
+{% extends 'base.html' %} {% block contenido %}
 
 <div class="container mt-3">
-    <div class="row">
-        <h2>{{lista_rating.0.categoria}}</h2>
-        <table id="lista_club" class="table table-striped" style="width:100%">
-            <thead class="table-dark">
-                <tr>
-                    <th>Rank</th>
-                    <th>Peleador</th>
-                    <th>Club</th>
-                    <th>Rating</th>
-                    <th>RD</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in lista_rating %}
-                <tr>
-                    <td>{{item.rank}}</td>
-                    <td>{{item.peleador.nombre}}</td>
-                    <td>{{item.peleador.club}}
-                    </td>
-                    <td>{{item.rating}}</td>
-                    <td>{{item.rd}}</td>
-                    
-                </tr>
-                {% endfor %}
-            </tbody>
-            <!-- <tfoot>
+  <div class="row">
+    <h2>{{lista_rating.0.categoria}}</h2>
+    <table id="lista_club" class="table table-striped" style="width: 100%">
+      <thead class="table-dark">
+        <tr>
+          <th>Rank</th>
+          <th>Peleador</th>
+          <th>Club</th>
+          <th>Rating</th>
+          <th>RD</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in lista_rating %}
+        <tr>
+          <td>{{item.rank}}</td>
+          <td>{{item.peleador.nombre}}</td>
+          <td>{{item.peleador.club}}</td>
+          <td>{{item.rating}}</td>
+          <td>{{item.rd}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+      <!-- <tfoot>
                 <tr>
                     <th>Rank</th>
                     <th>Categoria</th>
@@ -38,10 +34,8 @@
                     <th>RD</th>
                 </tr>
             </tfoot> -->
-        </table>
-    </div>
+    </table>
+  </div>
 </div>
 
-
 {% endblock %}
-
