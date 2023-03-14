@@ -3,7 +3,7 @@ import dj_database_url
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["espaditas.herokuapp.com"]
+ALLOWED_HOSTS = ["batallon.onrender.com"]
 
 
 MIDDLEWARE = [
